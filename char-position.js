@@ -1,15 +1,15 @@
-function countLetters(input){
-  var output = {};
-  for (var i = 0; i < input.length; i++){
-    var character = input[i].toLowerCase();
-    // console.log("key: ", character + " value: ", i)
-    if (character in output){
-      output[character].push(i);
-    } else if (character != ' '){
-      output[character] = [i];
+function countLetters(inputString){
+  var outputObject = {};
+  inputString = inputString.split(" ").join("");
+  for (var i = 0; i < inputString.length; i++){
+    var character = inputString[i];
+    if (character in outputObject){
+      outputObject[character].push(i);
+    } else {
+      outputObject[character] = [i];
     }
   }
-  return output;
+  return outputObject;
 }
 
 console.log(countLetters("lighthouse in the house"));
@@ -35,7 +35,12 @@ console.log(countLetters("lighthouse in the house"));
 
 
 
-// ---------------------------- ORIGINAL SOLUTION
+
+
+
+
+
+// ---------------------------- ORIGINAL SOLUTION 1:
 
 // function countLetters(inputString) {
 //   var outputObject = {};
@@ -50,4 +55,22 @@ console.log(countLetters("lighthouse in the house"));
 //     return outputObject;
 // }
 
+// console.log(countLetters("lighthouse in the house"));
+
+// ---------------------------- ORIGINAL SOLUTION 2:
+
+// function countLetters(input){
+//   var output = {};
+//   for (var i = 0; i < input.length; i++){
+//     var character = input[i].toLowerCase();
+//     // console.log("key: ", character + " value: ", i)
+//     if (character in output){
+//       output[character].push(i);
+//     } else if (character != ' '){
+//       output[character] = [i];
+//     }
+//   }
+//   return output;
+// }
+//
 // console.log(countLetters("lighthouse in the house"));
